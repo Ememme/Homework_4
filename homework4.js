@@ -1,3 +1,8 @@
+// MDN Definition:
+// The Promise.all() method returns a single Promise that resolves when all of the promises passed as an iterable have resolved or when the iterable contains no promises. It rejects with the reason of the first promise that rejects. Fail-fast.
+
+// https://promisesaplus.com/
+
 async function promiseAll2(promises) {
     // Twój kod tu
     const results = [];
@@ -7,10 +12,23 @@ async function promiseAll2(promises) {
   return results;
 }
 
-function promiseRace(promises) {
-  // Twój kod tu
-}
+/* Promise.race() definition:
+- returns a Promise that takes the same value as the first promise that settles amongst the promises of the iterable passed as an argument.
+- If the iterable passed is empty, the promise returned will be forever pending.
 
+If the iterable contains one or more non-promise value and/or an already resolved/rejected promise, then Promise.race will resolve to the first of these values found in the iterable.*/
+
+function promiseRace(promises) {
+  return new Promise((resolve, reject) => {
+    for (let i = 0; i < promises.length; i++) {
+      if (promises[i] != null && promises[i] instanceof Promise) {
+        promises[i].then(resolve, reject);
+      } else {
+        return resolve(promises[i]);
+      }
+    }
+  });
+}
 
 
 // Kod testowy.
