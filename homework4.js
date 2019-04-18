@@ -3,12 +3,11 @@
 
 // https://promisesaplus.com/
 
-async function promiseAll2(promises) {
-    // Twój kod tu
-    const results = [];
-    for (let i = 0; i < promises.length; i++) {
-        results.push(await promises[i]);
-    }
+const promiseAll = async(promises) => {
+  let results = [];
+  for await (let promise of promises) {
+      results.push(promise);
+  }
   return results;
 }
 
