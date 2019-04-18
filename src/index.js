@@ -4,6 +4,17 @@ import promiseAll from './utilities/promiseAll';
 import promiseRace from './utilities/promiseRace';
 
 // Kod testowy.
+function futureSuccess(val) {
+    return new Promise((resolve) => {
+      setTimeout(() => resolve(val), Math.random() * 500);
+    });
+  };
+  
+  function delayedSuccess(val, time) {
+    return new Promise((resolve) => {
+      setTimeout(() => resolve(val), time);
+    });
+  };
 promiseAll([]).then(result => {
     console.log('Test 1 promise.all:// To powinien być []:', JSON.stringify(result));
   });
@@ -52,14 +63,4 @@ promiseAll([]).then(result => {
       console.log('Test 3 promise.race:// To powinien być X:', error);
     });
   
-  function futureSuccess(val) {
-    return new Promise((resolve) => {
-      setTimeout(() => resolve(val), Math.random() * 500);
-    });
-  };
   
-  function delayedSuccess(val, time) {
-    return new Promise((resolve) => {
-      setTimeout(() => resolve(val), time);
-    });
-  };
