@@ -17,17 +17,18 @@ const promiseAll = async(promises) => {
 
 If the iterable contains one or more non-promise value and/or an already resolved/rejected promise, then Promise.race will resolve to the first of these values found in the iterable.*/
 
-function promiseRace(promises) {
+const promiseRace = async(promises) => {
   return new Promise((resolve, reject) => {
-    for (let i = 0; i < promises.length; i++) {
-      if (promises[i] != null && promises[i] instanceof Promise) {
-        promises[i].then(resolve, reject);
-      } else {
-        return resolve(promises[i]);
+    for (let item of promises) {
+      if (item != null && item instanceof Promise) {
+        item.then(resolve, reject);
+      }
+      else {
+        return resolve(item);
       }
     }
   });
-}
+};
 
 
 // Kod testowy.
