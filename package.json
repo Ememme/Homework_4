@@ -5,6 +5,7 @@
   "main": "homework4.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "prebuild": "rm -r -f docs",
     "dev": "webpack --mode development",
     "build": "webpack --mode production ./src/index.js --output ./docs/main.js"
   },

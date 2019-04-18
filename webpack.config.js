@@ -1,4 +1,8 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const pathsToClean = [ 'dist'];
+const cleanOptions = { root: __dirname, verbose: true, dry: false, exclude: [],};
+
 
 module.exports = {
   module: {
