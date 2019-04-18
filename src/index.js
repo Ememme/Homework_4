@@ -1,9 +1,9 @@
 console.log(`Zadanie domowe do JS Async`);
-import promiseAll from './utilities/promiseAll.js';
-import promiseRace from './utilities/promiseRace.js';
+
+import promiseAll from './utilities/promiseAll';
+import promiseRace from './utilities/promiseRace';
 
 // Kod testowy.
-
 promiseAll([]).then(result => {
     console.log('Test 1 promise.all:// To powinien być []:', JSON.stringify(result));
   });
