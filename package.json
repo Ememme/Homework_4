@@ -1,0 +1,36 @@
+{
+  "name": "homework_4",
+  "version": "1.0.0",
+  "description": "homework_4 async",
+  "main": "homework4.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production ./src/index.js --output ./docs/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ememme/Homework_4.git"
+  },
+  "keywords": [
+    "async_js"
+  ],
+  "author": "Magda Mieczynska",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ememme/Homework_4/issues"
+  },
+  "homepage": "https://github.com/Ememme/Homework_4#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.1",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.6.0",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.3.1"
+  }
+}
